@@ -4,7 +4,7 @@ LOG_FILE=/tmp/roboshop.catalogue
 rm -f $LOG_FILE
 
 echo Intstalling nginx
-yum install nginix -y>>$LOG_FILE
+sudo yum install ngnix -y>>$LOG_FILE
 case $? in
   0)
     echo Successfully installed
@@ -12,6 +12,7 @@ case $? in
   *)
     echo Failure
     echo "refer log file $LOG_FILE"
+    exit 1
     ;;
 esac
 
