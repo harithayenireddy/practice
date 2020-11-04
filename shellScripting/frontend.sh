@@ -4,7 +4,7 @@ LOG_FILE=/tmp/roboshop.catalogue
 rm -f $LOG_FILE
 
 echo Intstalling nginx
-sudo yum install ngnix -y>>$LOG_FILE
+sudo yum install nginx -y>>$LOG_FILE
 case $? in
   0)
     echo Successfully installed
