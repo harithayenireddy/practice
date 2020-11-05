@@ -57,7 +57,9 @@ unzip mongodb.zip &>>LOG_FILE
 status_check $?
 
 mongo < catalogue.js &>>LOG_FILE
+status_check $?
 
 mongo < users.js &>>LOG_FILE
+status_check $?
 
 
