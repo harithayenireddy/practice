@@ -33,6 +33,7 @@ cd catalogue
 unzip /tmp/catalogue.zip &>>LOG_FILE
 status_check $?
 
+useradd roboshop
 
 npm install --unsafe-perm &>>$LOG_FILE
 status_check $?
