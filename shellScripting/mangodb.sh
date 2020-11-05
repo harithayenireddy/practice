@@ -42,7 +42,7 @@ systemctl start mongod
 status_check $?
 
 
-Print "Update MangoDB config file"
+echo "Update MangoDB config file"
 sed -i -e "s/127.0.0.0/0.0.0.0" /etc/mongod.conf
 status_check $?
 
