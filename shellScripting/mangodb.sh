@@ -33,6 +33,11 @@ gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc' >/etc/yum.repos.d/mong
 sudo yum install -y mongodb-org &>>LOG_FILE
 status_check $?
 
+
+echo "Update MangoDB config file"
+sed -i -e "s/127.0.0.0/0.0.0.0" /etc/mongod.conf
+status_check $?
+
 #Enbale mango-db
 systemctl enable mongod
 status_check $?
@@ -41,10 +46,6 @@ status_check $?
 systemctl start mongod
 status_check $?
 
-
-echo "Update MangoDB config file"
-sed -i -e "s/127.0.0.0/0.0.0.0" /etc/mongod.conf
-status_check $?
 
 #restart
 systemctl restart mongod
