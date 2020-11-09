@@ -6,8 +6,8 @@
         msg: Hello World
 
 - name: demo of play2
-    hosts: all
-    tasks:
-      -name: Demo of task1 in paly1
+  hosts: all
+  tasks:
+    - name: Demo of task1 in paly1
        debug:
          msg: Hello world
