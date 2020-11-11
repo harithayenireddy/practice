@@ -1,0 +1,24 @@
+- name: Roboshop Playbook
+  hosts: all
+  become: yes
+  vars:
+    APP_USER: roboshop
+  tasks:
+    - name: Import Frontend Role
+      import_role:
+        name: frontend
+      when: component == "frontend"
+      tags:
+        - frontend
+    - name: Import MongoDB Role
+      import_role:
+        name: mongo
+      when: component == "mongo"
+      tags:
+        - mongo
+    - name: Import Catalogue Role
+      import_role:
+        name: catalogue
+      when: component == "catalogue"
+      tags:
+        - catalogue
